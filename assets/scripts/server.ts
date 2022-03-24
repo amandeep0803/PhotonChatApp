@@ -23,13 +23,11 @@ export default class Network extends Photon.Chat.ChatClient{
         }
         else{
             for(let message of messages){
-                if(message.getSender()==this.senderID){
-                    console.log("Hi");
-                }
-                else{
-                    console.log("Bye");
+                if(message.getSender()!=this.senderID){
+                    this.mainBG.messageTransfer(message.getContent());
                 }
             }
+            console.log(messages);
         }
     }
 }

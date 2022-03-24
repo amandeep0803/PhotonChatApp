@@ -1,10 +1,11 @@
 
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, EditBox, Prefab } from 'cc';
 const { ccclass, property } = _decorator;
 
  
 @ccclass('BG')
 export class BG extends Component {
+    
     mainBG:any;
     start () {
         this.mainBG=this.node.getComponent('mainBG');
@@ -21,7 +22,6 @@ export class BG extends Component {
         message.active=true;
     }
     onSendMessageClick(){
-        this.mainBG.sendMessage();
-        
+        this.mainBG.sendMessage(); 
     }
 }
