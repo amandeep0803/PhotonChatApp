@@ -71,7 +71,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 48.94,
+      "width": 183.42,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -107,7 +107,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "Label",
+    "_string": "Here is the message",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,

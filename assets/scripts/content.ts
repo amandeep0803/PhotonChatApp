@@ -7,8 +7,6 @@ const { ccclass, property } = _decorator;
 export class content extends Component {
     @property({type:Prefab})
     messageLabel:Prefab;
-    yPos:number=0;
-
     start () {
         this.node.getComponent(UITransform).height=0;
     }
@@ -23,13 +21,12 @@ export class content extends Component {
         let position=this.node.position;
         this.node.addChild(messageNode);
         if(toLeft){
-            messageNode.setPosition(-(nodeWidth*0.5-messageNodeWidth*0.5),this.yPos-messageNodeHeight*0.5,1);
+            messageNode.setPosition(-(nodeWidth*0.5-messageNodeWidth*0.5),messageNode.position.y,1);
         }
         else{
-            messageNode.setPosition(nodeWidth*0.5-messageNodeWidth*0.5,this.yPos-messageNodeHeight*0.5,1);
+            messageNode.setPosition(nodeWidth*0.5-messageNodeWidth*0.5,messageNode.position.y,1);
         }
         this.node.getComponent(UITransform).height=nodeHeight+messageNodeHeight;
-        this.node.setPosition(position.x,parentHeight*0.5-nodeHeight*0.5,position.z);
-        this.yPos-=(messageNodeHeight);
+        this.node.setPosition(0,parentHeight*0.5-(nodeHeight+messageNodeHeight)*0.5,position.z);
     }
 }
